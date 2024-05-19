@@ -46,3 +46,24 @@ class Monster:
 def battle(fighter, monster):
     print(f"Боец {fighter.attack()}.")
     print(monster.take_damage(10))
+# Создание оружия
+sword = Sword()
+bow = Bow()
+
+# Создание бойца с мечом
+fighter = Fighter(sword)
+
+# Создание монстра
+monster = Monster()
+
+# Бой мечом
+battle(fighter, monster)
+
+# Смена оружия на лук
+fighter.change_weapon(bow)
+
+# Новый монстр для следующего боя
+monster = Monster()
+
+# Бой луком
+battle(fighter, monster)
