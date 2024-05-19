@@ -15,3 +15,16 @@ class Sword(Weapon):
 class Bow(Weapon):
     def attack(self):
         return "наносит удар из лука"
+# Класс бойца
+class Fighter:
+    def __init__(self, weapon: Weapon):
+        """Инициализация бойца с начальным оружием."""
+        self.weapon = weapon
+
+    def change_weapon(self, weapon: Weapon):
+        """Метод для смены оружия бойца."""
+        self.weapon = weapon
+
+    def attack(self):
+        """Боец атакует, используя выбранное оружие."""
+        return self.weapon.attack()
