@@ -28,3 +28,21 @@ class Fighter:
     def attack(self):
         """Боец атакует, используя выбранное оружие."""
         return self.weapon.attack()
+# Класс монстра
+class Monster:
+    def __init__(self):
+        """Инициализация монстра."""
+        self.health = 10  # Здоровье монстра для простоты
+
+    def take_damage(self, damage):
+        """Монстр получает урон."""
+        self.health -= damage
+        if self.health <= 0:
+            return "Монстр побежден!"
+        else:
+            return "Монстр все еще сражается."
+
+# Функция для демонстрации боя
+def battle(fighter, monster):
+    print(f"Боец {fighter.attack()}.")
+    print(monster.take_damage(10))
